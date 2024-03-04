@@ -52,9 +52,9 @@ export function runAPI(express, app, gitCommit, gitBranch, __dirname) {
     app.set('trust proxy', ['loopback', 'uniquelocal']);
 
     app.use('/api/:type', cors(corsConfig));
-    app.use('/api/json', apiLimiter);
-    app.use('/api/stream', apiLimiterStream);
-    app.use('/api/onDemand', apiLimiter);
+    // app.use('/api/json', apiLimiter);
+    // app.use('/api/stream', apiLimiterStream);
+    // app.use('/api/onDemand', apiLimiter);
 
     app.use((req, res, next) => {
         try { decodeURIComponent(req.path) } catch (e) { return res.redirect('/') }
