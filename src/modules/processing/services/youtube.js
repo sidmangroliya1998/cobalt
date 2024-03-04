@@ -1,8 +1,8 @@
-import { Innertube } from 'youtubei.js';
+import { Innertube, UniversalCache, Utils } from 'youtubei.js';
 import { maxVideoDuration } from '../../config.js';
 import { cleanString } from '../../sub/utils.js';
 
-const yt = await Innertube.create();
+const yt = await Innertube.create({ cache: new UniversalCache(false), generate_session_locally: true });
 
 const c = {
     h264: {
