@@ -150,7 +150,6 @@ export function streamAudioOnly(streamInfo, res) {
         }
         args.push('-f', streamInfo.audioFormat === "m4a" ? "ipod" : streamInfo.audioFormat, 'pipe:3');
 
-        console.log("getCommand(args) -- ", getCommand(args));
         process = spawn(...getCommand(args), {
             windowsHide: true,
             stdio: [
